@@ -19,14 +19,15 @@ package com.example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
+import java.sql.Timestamp;
+import java.util.List;
 import java.util.Map;
 
 import static javax.measure.unit.SI.KILOGRAM;
@@ -39,7 +40,7 @@ import org.jscience.physics.amount.Amount;
 public class Main {
 
 	@Autowired
-	private DataSource dataSource;
+	private SampleDao dao;
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
@@ -50,25 +51,12 @@ public class Main {
 		return "index";
 	}
 
-	@RequestMapping("/db")
-	public String db(Map<String, Object> model) {
-		try (Connection connection = dataSource.getConnection()) {
-			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-			stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-			ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
+	@RequestMapping(value = "db", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<Timestamp>> db() throws Exception {
+		List<Timestamp> timestamps = dao.getTicks();
 
-			ArrayList<String> output = new ArrayList<String>();
-			while (rs.next()) {
-				output.add("Read from DB: " + rs.getTimestamp("tick"));
-			}
-
-			model.put("records", output);
-			return "db";
-		} catch (Exception e) {
-			model.put("message", e.getMessage());
-			return "error";
-		}
+		return new ResponseEntity<List<Timestamp>>(timestamps, HttpStatus.OK);
 	}
 
 	@RequestMapping("/hello")

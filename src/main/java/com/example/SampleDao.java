@@ -3,20 +3,19 @@ package com.example;
 import java.sql.Timestamp;
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SampleDao {
 
-	private final SqlSession sqlSession;
+	private static String namespace = "com.example.dao";
 	
-	public SampleDao(SqlSession sqlSession) {
-		this.sqlSession = sqlSession;
-	}
+	@Autowired
+	private DBConfig dbConfig;
 	
-	public List<Timestamp> selectTicks() {
-		return this.sqlSession.selectList("selectTicks");
+	public List<Timestamp> getTicks() throws Exception {
+		return this.dbConfig.sqlSessionTemplate().selectList(namespace + ".selectTicks");
 	}
 	
 }
