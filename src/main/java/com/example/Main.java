@@ -34,6 +34,7 @@ import java.util.List;
 
 @RestController
 @SpringBootApplication
+@MapperScan("com.example.mapper")
 public class Main {
 
 	@Autowired
