@@ -1,8 +1,9 @@
 package com.example.mapper;
 
-import java.sql.Timestamp;
 import java.util.List;
 
+import com.example.vo.TicksVo;
+
 public interface SampleMapper {
-	public List<Timestamp> getTicks();
+	public List<TicksVo> getTicks();
 }

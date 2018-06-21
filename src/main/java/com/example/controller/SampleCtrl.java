@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.service.SampleService;
+import com.example.vo.TicksVo;
 
 @RestController
 public class SampleCtrl {
@@ -26,10 +26,10 @@ public class SampleCtrl {
 
 	@RequestMapping(value = "db", method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<List<Timestamp>> db() throws Exception {
-		List<Timestamp> timestamps = sampleService.getTicks();
+	public ResponseEntity<List<TicksVo>> db() throws Exception {
+		List<TicksVo> timestamps = sampleService.getTicks();
 
-		return new ResponseEntity<List<Timestamp>>(timestamps, HttpStatus.OK);
+		return new ResponseEntity<List<TicksVo>>(timestamps, HttpStatus.OK);
 	}
 
 }
