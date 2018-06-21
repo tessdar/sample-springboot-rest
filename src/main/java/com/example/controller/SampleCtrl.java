@@ -3,7 +3,6 @@ package com.example.controller;
 import java.sql.Timestamp;
 import java.util.List;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.mapper.SampleMapper;
+import com.example.service.SampleService;
 
 @RestController
-@MapperScan("com.example.mapper")
 public class SampleCtrl {
 
 	@Autowired
-	private SampleMapper sampleMapper;
+	private SampleService sampleService;
 
 	@RequestMapping("/")
 	public String index() {
@@ -29,7 +27,7 @@ public class SampleCtrl {
 	@RequestMapping(value = "db", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<Timestamp>> db() throws Exception {
-		List<Timestamp> timestamps = sampleMapper.getTicks();
+		List<Timestamp> timestamps = sampleService.getTicks();
 
 		return new ResponseEntity<List<Timestamp>>(timestamps, HttpStatus.OK);
 	}
