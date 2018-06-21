@@ -16,6 +16,7 @@
 
 package com.example;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,21 +27,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.mapper.SampleMapper;
+
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Map;
-
-import static javax.measure.unit.SI.KILOGRAM;
-import javax.measure.quantity.Mass;
-import org.jscience.physics.model.RelativisticModel;
-import org.jscience.physics.amount.Amount;
 
 @RestController
 @SpringBootApplication
+@MapperScan("com.example.mapper")
 public class Main {
 
 	@Autowired
-	private SampleDao dao;
+	private SampleMapper sampleMapper;
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
@@ -54,17 +52,9 @@ public class Main {
 	@RequestMapping(value = "db", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<Timestamp>> db() throws Exception {
-		List<Timestamp> timestamps = dao.getTicks();
+		List<Timestamp> timestamps = sampleMapper.getTicks();
 
 		return new ResponseEntity<List<Timestamp>>(timestamps, HttpStatus.OK);
-	}
-
-	@RequestMapping("/hello")
-	String hello(Map<String, Object> model) {
-		RelativisticModel.select();
-		Amount<Mass> m = Amount.valueOf("12 GeV").to(KILOGRAM);
-		model.put("science", "E=mc^2: 12 GeV = " + m.toString());
-		return "hello";
 	}
 
 }
