@@ -1,7 +1,7 @@
 {
     "login": {
         "siteName": "Site Name",
-        "userName": "User Name",
+        "userName": "User ID",
         "password": "Password",
         "login": "LOG IN",
         "forgot": "Forgot your password?"
