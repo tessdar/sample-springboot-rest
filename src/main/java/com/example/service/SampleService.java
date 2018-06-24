@@ -2,10 +2,29 @@ package com.example.service;
 
 import java.util.List;
 
-import com.example.vo.TicksVo;
+import com.example.vo.DepChartVo;
+import com.example.vo.DepListVo;
+import com.example.vo.EmpListVo;
+import com.example.vo.EmpSaveVo;
+import com.example.vo.JobChartVo;
+import com.example.vo.JobListVo;
 
 public interface SampleService {
 
-	public List<TicksVo> getTicks();
+	public List<EmpListVo> getEmpList(Long departmentId);
+	
+	public String setEmp(List<EmpSaveVo> vos);
+	
+	public String delEmp(List<EmpSaveVo> vos);
+	
+	public String insEmp(List<EmpSaveVo> vos);
+	
+	public List<DepListVo> getDepList();
+	
+	public List<JobListVo> getJobList();
+	
+	public List<DepChartVo> getDepChart();
+	
+	public List<JobChartVo> getJobChart();	
 
 }
