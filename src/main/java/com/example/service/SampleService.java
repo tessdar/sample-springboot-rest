@@ -10,6 +10,8 @@ import com.example.vo.JobChartVo;
 import com.example.vo.JobListVo;
 
 public interface SampleService {
+	
+	public void scheRefreshCache();
 
 	public List<EmpListVo> getEmpList(Long departmentId);
 	

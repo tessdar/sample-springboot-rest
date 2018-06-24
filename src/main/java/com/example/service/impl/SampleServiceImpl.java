@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import com.common.util.MessageProp;
 import com.common.util.Status;
@@ -23,6 +26,17 @@ public class SampleServiceImpl implements SampleService {
 	@Autowired
 	private SampleMapper sampleMapper;
 
+	/**
+	 * Cache Refresh 
+	 * 매일 새벽 3시에 실행 
+	 */
+	@Override
+	@CacheEvict(value = { "DepList", "JobList" })
+	@Scheduled(cron = "0 0 3 * * ?")
+	public void scheRefreshCache() {
+		
+	}
+	
 	@Override
 	public List<EmpListVo> getEmpList(Long departmentId) {
 		return sampleMapper.getEmpList(departmentId);
@@ -69,11 +83,13 @@ public class SampleServiceImpl implements SampleService {
 	}
 
 	@Override
+	@Cacheable(value="DepList")
 	public List<DepListVo> getDepList() {
 		return sampleMapper.getDepList();
 	}
 
 	@Override
+	@Cacheable(value="JobList")
 	public List<JobListVo> getJobList() {
 		return sampleMapper.getJobList();
 	}
