@@ -5,6 +5,8 @@ import java.util.List;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.common.util.MessageProp;
 import com.common.util.Status;
 import com.example.mapper.SampleMapper;
@@ -24,6 +26,7 @@ public class SampleServiceImpl implements SampleService {
 	private SampleMapper sampleMapper;
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<EmpListVo> getEmpList(Long departmentId) {
 		return sampleMapper.getEmpList(departmentId);
 	}
@@ -56,55 +59,25 @@ public class SampleServiceImpl implements SampleService {
 	}
 
 	@Override
-	public String delEmp(List<EmpSaveVo> vos) {
-
-		try {
-
-			for (EmpSaveVo vo : vos) {
-				sampleMapper.delEmp(vo.getEmployeeId());
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return MessageProp.ERR_DEL.getMsg();
-		}
-
-		return MessageProp.INFO_DEL.getMsg();
-	}
-
-	@Override
-	public String insEmp(List<EmpSaveVo> vos) {
-
-		try {
-
-			for (EmpSaveVo vo : vos) {
-				sampleMapper.insEmp(vo);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return MessageProp.ERR_INS.getMsg();
-		}
-
-		return MessageProp.INFO_INS.getMsg();
-	}
-
-	@Override
+	@Transactional(readOnly=true)
 	public List<DepListVo> getDepList() {
 		return sampleMapper.getDepList();
 	}
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<JobListVo> getJobList() {
 		return sampleMapper.getJobList();
 	}
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<DepChartVo> getDepChart() {
 		return sampleMapper.getDepChart();
 	}
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<JobChartVo> getJobChart() {
 		return sampleMapper.getJobChart();
 	}

@@ -6,10 +6,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,7 +25,7 @@ import com.example.vo.JobChartVo;
 import com.example.vo.JobListVo;
 
 @RestController
-@RequestMapping({"/api"})
+@RequestMapping({"/api/emp"})
 public class SampleCtrl {
 
 	private static Map<String, Object> result = new HashMap<String, Object>();
@@ -41,11 +39,6 @@ public class SampleCtrl {
 
 	@Autowired
 	private MessageReturn messageReturn;
-	
-	@GetMapping(path = {"/"})
-	public String index() {
-		return "index";
-	}
 
 	@GetMapping(path = {"/list"})
 	@ResponseBody
@@ -63,30 +56,6 @@ public class SampleCtrl {
 		result = null;
 
 		msg = service.setEmp(vos);
-		result = messageTrans.getMapLang(msg);
-
-		return messageReturn.getRestResp(result, msg);
-	}
-
-	@DeleteMapping(path = "/del", consumes = "application/json")
-	@ResponseBody
-	public ResponseEntity<Map<String, Object>> delEmp(@RequestBody List<EmpSaveVo> vos) {
-
-		result = null;
-		
-		msg = service.delEmp(vos);
-		result = messageTrans.getMapLang(msg);
-
-		return messageReturn.getRestResp(result, msg);
-	}
-
-	@PutMapping(path = "/ins", consumes = "application/json")
-	@ResponseBody
-	public ResponseEntity<Map<String, Object>> insEmp(@RequestBody List<EmpSaveVo> vos) {
-
-		result = null;
-		
-		msg = service.insEmp(vos);
 		result = messageTrans.getMapLang(msg);
 
 		return messageReturn.getRestResp(result, msg);

@@ -15,10 +15,6 @@ public interface SampleService {
 	
 	public String setEmp(List<EmpSaveVo> vos);
 	
-	public String delEmp(List<EmpSaveVo> vos);
-	
-	public String insEmp(List<EmpSaveVo> vos);
-	
 	public List<DepListVo> getDepList();
 	
 	public List<JobListVo> getJobList();
