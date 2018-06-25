@@ -15,8 +15,9 @@ import org.springframework.transaction.interceptor.RollbackRuleAttribute;
 import org.springframework.transaction.interceptor.RuleBasedTransactionAttribute;
 import org.springframework.transaction.interceptor.TransactionInterceptor;
 
-@Aspect
+
 @Configuration
+@Aspect
 public class TrxAspect {
 
 	private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.example.service.*Service.*(..))";
@@ -32,7 +33,7 @@ public class TrxAspect {
 		transactionAttribute1.setName("get*");
 		transactionAttribute1.setReadOnly(true);
 		source.setTransactionAttribute(transactionAttribute1);
-
+		
 		RuleBasedTransactionAttribute transactionAttribute2 = new RuleBasedTransactionAttribute();
 
 		transactionAttribute2.setName("set*");
