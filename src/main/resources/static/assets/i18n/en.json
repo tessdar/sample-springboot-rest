@@ -9,6 +9,7 @@
     "main": {
         "siteName": "Site Name",
         "userInfo": "User Info",
+        "config": "Configuration",
         "changeTheme": "Change Theme",
         "logout": "Log out",
         "autoLogout": "Log out automatically because there were not actions for 30 min.",
@@ -25,6 +26,11 @@
             "basicTree": "Basic Tree",
             "headDetail": "Parent Child",
             "chartForm": "Chart Form",
+            "basicWebcam": "Camera",
+            "barcodeScan": "Barcode Scan",
+            "signPad": "Signature Pad",
+            "googleMaps": "Google Maps",
+            "webBluetooth": "Web Bluetooth",
             "helpAdvice": "Help",
             "archHelp": "Folder",
             "newComp": "Module & Component",
@@ -48,13 +54,19 @@
             "confProc": "Are you sure that you want to proceed?",
             "noResponse": "No response from server.",
             "askQuit": "Unsaved changes exists. Are you sure to quit?",
-            "loginFail": "ID doesn't exists or wrong password."
+            "loginFail": "ID doesn't exists or wrong password.",
+            "noGeoSupport": "Geolocation is not supported by this browser.",
+            "onLine": "Online Mode",
+            "offLine": "Offline Mode"
         }
     },
     "home": {
         "requireTitle": "System Requirements",
         "mainPackTitle": "Main Package"
     },
+    "config": {
+        "configTitle": "Configuration"
+    },     
     "designGuide": {
         "btnLib": {
             "buttonTitle": "Button Components",
@@ -128,7 +140,33 @@
         "chartForm": {
             "departStatus": "Department Status",
             "jobStatus": "Job Status"
-        }
+        },
+        "basicWebcam": {
+            "camera": "Camera",
+            "takeShot": "Take a Shot",
+            "toggle": "Toggle",
+            "nextCam": "Next",
+            "AllowSwitch": "Allow Camera Swith",
+            "deviceId": "Device",
+            "activate": "Activate",
+            "camImage": "Image",
+            "fileSave": "File Save"
+        },
+        "barcodeScan": {
+            "barcode": "Barcode"
+        },
+        "signPad": {
+            "signature": "Signature Pad",
+            "clear": "Clear",
+            "signImage": "Image",
+            "fileSave": "File Save"
+        },
+        "googleMaps": {
+            "maps": "Maps"            
+        },
+        "webBluetooth": {
+            "bluetooth": "Bluetooth"            
+        }                  
     },
     "helpAdvice": {
         "archHelp": {

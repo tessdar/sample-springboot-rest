@@ -528,10 +528,14 @@ form.ui-form {
     color: $inputTopBdColor;
 }
 
-.ui-inputgroup .ui-inputgroup-addon {
-    border-radius: 0px !important;
-    border: 1px solid $inputBdColor;
-    width: 120px;
+.ui-inputgroup {
+    width: 100%;
+
+    .ui-inputgroup-addon {
+        border-radius: 0px !important;
+        border: 1px solid $inputBdColor;
+        width: 120px;
+    }
 }
 
 /* Password */
@@ -757,9 +761,7 @@ form.ui-form {
 
 /* TreeTable */
 .ui-treetable {
-    margin-top: .5em; 
-
-   .ui-treetable-header{
+    .ui-treetable-thead > tr > th {
         border-top: 2px solid $inputTopBdColor;
         border-left: none;
         border-right: none;
@@ -767,21 +769,75 @@ form.ui-form {
         border-radius: 0px;
         background: $inputHeaderBgColor;
         padding: .5em;
-   }
-
-    th.ui-state-default {
-        border-top: 2px solid $inputTopBdColor;
-        border-left: none;
-        border-right: none;
-        border-bottom: 1px solid $inputBdColor;
-        border-radius: 0px;
-        background: $inputHeaderBgColor;
-        padding: .5em; 
-
+    }
+    .ui-treetable-tfoot > tr > td {
+        background-color: $headerBgColor;
+        border: 1px solid $headerBorderColor;
+        color: $headerTextColor;
     }
 
-    td.undefined {
-        padding: .5em; 
+    .ui-treetable-tbody > tr {
+        background-color: $contentBgColor;
+        color: $contentTextColor;
+
+        > td {
+            border-bottom: 1px solid $contentBorderColor;
+            background-color: inherit;
+        }
+
+        &.ui-state-highlight {
+            background-color: $stateHighlightBgColor;
+            color: $stateHighlightTextColor;
+
+            .ui-treetable-toggler {
+                color: $stateHighlightTextColor;
+            }
+        }
+
+        &.ui-contextmenu-selected {
+            background-color: lighten($stateHighlightBgColor, 20%);
+            color: $stateHighlightTextColor;
+
+            .ui-treetable-toggler {
+                color: $stateHighlightTextColor;
+            }
+        }
+
+        .ui-treetable-toggler {
+            color: $contentTextColor;
+        }
+    }
+
+    .ui-sortable-column {
+        .ui-sortable-column-icon {
+            color: $headerTextColor;
+        }
+
+        &.ui-state-highlight {
+            background-color: $stateHighlightBgColor;
+            color: $stateHighlightTextColor;
+
+            .ui-sortable-column-icon {
+                color: $stateHighlightTextColor;
+            }
+        }
+
+        &:not(.ui-state-highlight):hover {
+            background-color: $stateHoverBgColor;
+            color: $stateHoverTextColor;
+
+            .ui-sortable-column-icon {
+                color: $stateHoverTextColor;
+            }
+        }
+    }
+
+    &.ui-treetable-hoverable-rows {
+        .ui-treetable-tbody > tr:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+            cursor: pointer;
+            background-color: $stateHoverBgColor;
+            color: $stateHoverTextColor;
+        }
     }
 }
 
