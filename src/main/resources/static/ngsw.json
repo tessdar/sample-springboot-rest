@@ -9,8 +9,8 @@
       "urls": [
         "/0.e076935f117613b50f76.js",
         "/1.d8f91c81ff18257e2b06.js",
-        "/10.10c50e09d26db369e1ea.js",
-        "/11.d55b51cdcd16df9a259c.js",
+        "/10.06dbb7487cbb79342e8a.js",
+        "/11.2ed47c7f4547bf4d3bf3.js",
         "/12.f4803501a12d015705bc.js",
         "/3.1aa1f8fbb52e75505756.js",
         "/4.27f8676a73fafebfb8af.js",
@@ -53,15 +53,15 @@
         "/icomoon.be3ae03d14165262d6cd.woff",
         "/icomoon.c95865c1495c254f9f6d.eot",
         "/index.html",
-        "/main.ddf5c37d005f0b41ddda.js",
+        "/main.cd4dcec0334980337ae7.js",
         "/polyfills.df3ce76a9b670fa762d6.js",
         "/primeicons.578adf2401b7fb04c642.ttf",
         "/primeicons.721cded7b825d0911a11.svg",
         "/primeicons.7b38afd805cafd984676.woff",
         "/primeicons.826437530b3cf08b14cd.eot",
-        "/runtime.f1224a0aeabb94471fcb.js",
+        "/runtime.749199b3d8960ba512a6.js",
         "/scripts.dacd8e164bbb7172a1b6.js",
-        "/styles.c390e46ca93f7ef8e1c0.css"
+        "/styles.c7d09e0022d674d8bb7c.css"
       ],
       "patterns": []
     },
@@ -144,17 +144,18 @@
       "patterns": [
         "\\/api\\/emp"
       ],
-      "strategy": "performance",
+      "strategy": "freshness",
       "maxSize": 100,
       "maxAge": 259200000,
+      "timeoutMs": 10000,
       "version": 1
     }
   ],
   "hashTable": {
     "/0.e076935f117613b50f76.js": "4f4f315bd87b1827490e0e274e42711942cf5b19",
     "/1.d8f91c81ff18257e2b06.js": "8719c8037b18442353340fcb1765d991335f1217",
-    "/10.10c50e09d26db369e1ea.js": "ccc66c519dae682f344e88059d19d16f15507d56",
-    "/11.d55b51cdcd16df9a259c.js": "88d558255d1bb440a6c5225d5d1d775f8978d047",
+    "/10.06dbb7487cbb79342e8a.js": "329c52c42641cdf57448960b6b064e005df80824",
+    "/11.2ed47c7f4547bf4d3bf3.js": "c0f9add4d4529b9c435e7cef22b16dcb183d957e",
     "/12.f4803501a12d015705bc.js": "197b5b9e739bd1f4d3557655974d4c4bd77b1d0d",
     "/3.1aa1f8fbb52e75505756.js": "b83c65758216cc4c53fe534ccffa6942671a97c2",
     "/4.27f8676a73fafebfb8af.js": "81c7f67f0c23c1118d5bdd487a61416dc79da1c1",
@@ -175,8 +176,8 @@
     "/RenaultSamsungMotorsRegular.bedc335aad0871a5aeaa.eot": "68b7eae86c0e1cefac9384649c2b07c9f019b85a",
     "/RenaultSamsungMotorsRegular.c38164e07a7dc4c4baa4.ttf": "9feff89dbb8b4fb974c065d2b4327829689b1bf7",
     "/RenaultSamsungMotorsRegular.dae4d6c18a7053176e7a.woff2": "fc1e0d89d0620895deb13eb0a9c4fa2bba290e91",
-    "/assets/i18n/en.json": "7f572e9eed1ca674b5e4bad39223e6d38be8926a",
-    "/assets/i18n/ko.json": "8504d69729d81fa1cf4429ff3081e74aadf5084e",
+    "/assets/i18n/en.json": "614550cba11e73a2d21b548902ecdab8878c0546",
+    "/assets/i18n/ko.json": "990d73c05476b04321792cd4aba7ec4a54072062",
     "/assets/icons/fonts/icomoon.eot": "1e068123edd174970f858acc9351d224a5aab797",
     "/assets/icons/fonts/icomoon.svg": "8bc7d9809eedf4a69aef3e2c921d973cd6af0515",
     "/assets/icons/fonts/icomoon.ttf": "5150fa43dba539cde0fd50a771dbd4fb3ae9c88f",
@@ -260,16 +261,16 @@
     "/icomoon.240b93bc228ee93b61da.ttf": "5150fa43dba539cde0fd50a771dbd4fb3ae9c88f",
     "/icomoon.be3ae03d14165262d6cd.woff": "80f72696181ac1afec9f6d82bfe59ab3730bd316",
     "/icomoon.c95865c1495c254f9f6d.eot": "1e068123edd174970f858acc9351d224a5aab797",
-    "/index.html": "16c310e83d804693635af48f6bff99fcaa05ea6b",
-    "/main.ddf5c37d005f0b41ddda.js": "dfd7df4597ae8fffa61b5112d85c3ddc50b44337",
+    "/index.html": "ec2534c76100c3fde447971598e8a80803bf0764",
+    "/main.cd4dcec0334980337ae7.js": "1e94befe37a7a8b876bb1278005743e0426d0cdd",
     "/polyfills.df3ce76a9b670fa762d6.js": "fdaa45e2d28d9eb4b3077e2092f08daa483401c7",
     "/primeicons.578adf2401b7fb04c642.ttf": "6ac2201400c760296c74a18bb788023eba50cc92",
     "/primeicons.721cded7b825d0911a11.svg": "71673ae3a40c1944a527182d85e267946af1e14b",
     "/primeicons.7b38afd805cafd984676.woff": "03c0450cf9ca8978793c6f0b88ec7e1a002fb0f0",
     "/primeicons.826437530b3cf08b14cd.eot": "9d6e4b398df2d27aedf2c38075733529f79723c8",
-    "/runtime.f1224a0aeabb94471fcb.js": "f89eb5288ea8f60a77a4164c318119bfe9aeaca5",
+    "/runtime.749199b3d8960ba512a6.js": "b47d379687274d1a005eab01c66238372cc1e18b",
     "/scripts.dacd8e164bbb7172a1b6.js": "d305ee1ae37dd194e3d5be06467f2ddb877f82ed",
-    "/styles.c390e46ca93f7ef8e1c0.css": "1752641e4e3455bc61f9057a7d9af1f0de75933a"
+    "/styles.c7d09e0022d674d8bb7c.css": "6611cd03399a14be50e7d0bc7d07c027c1c4df55"
   },
   "navigationUrls": [
     {
