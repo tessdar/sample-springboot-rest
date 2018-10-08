@@ -308,15 +308,15 @@ Apache-2.0
 Apache-2.0
 Apache-2.0
 
+@angular/animations@6.1.8
+MIT
+MIT
+
 @angular/forms@6.1.8
 MIT
 MIT
 
 @angular/platform-browser@6.1.8
-MIT
-MIT
-
-@angular/animations@6.1.8
 MIT
 MIT
 
