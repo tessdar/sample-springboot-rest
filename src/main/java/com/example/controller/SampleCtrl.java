@@ -53,9 +53,12 @@ public class SampleCtrl {
 	@ResponseBody
 	public ResponseEntity<Map<String, Object>> setEmp(@RequestBody List<EmpSaveVo> vos) {
 		
-		result = null;
-
-		msg = service.setEmp(vos);
+		result.clear();
+		try {
+			msg = service.setEmp(vos);
+		} catch (Exception e) {
+			msg = e.getMessage();
+		}
 		result = messageTrans.getMapLang(msg);
 
 		return messageReturn.getRestResp(result, msg);

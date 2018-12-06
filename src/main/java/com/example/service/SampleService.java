@@ -15,7 +15,7 @@ public interface SampleService {
 
 	public List<EmpListVo> getEmpList(Long departmentId);
 	
-	public String setEmp(List<EmpSaveVo> vos);
+	public String setEmp(List<EmpSaveVo> vos) throws Exception;
 	
 	public List<DepListVo> getDepList();
 	

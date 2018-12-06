@@ -47,7 +47,7 @@ public class SampleServiceImpl implements SampleService {
 	}
 
 	@Override
-	public String setEmp(List<EmpSaveVo> vos) {
+	public String setEmp(List<EmpSaveVo> vos) throws Exception {
 
 		try {
 
@@ -58,29 +58,29 @@ public class SampleServiceImpl implements SampleService {
 					int delCnt = sampleMapper.delEmp(vo.getEmployeeId());
 
 					if (delCnt < 1) {
-						throw new Exception();
+						throw new Exception("Error: sampleMapper.delEmp");
 					}
 
 				} else if (vo.get_status() == Status.New.getStatus()) {
 					int insCnt = sampleMapper.insEmp(vo);
 					
 					if (insCnt < 1) {
-						throw new Exception();
+						throw new Exception("Error: sampleMapper.insEmp");
 					}
 
 				} else if (vo.get_status() == Status.Modified.getStatus()) {
 					int setCnt = sampleMapper.setEmp(vo);
 					
 					if (setCnt < 1) {
-						throw new Exception();
+						throw new Exception("Error: sampleMapper.setEmp");
 					}
 				}
 
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			return MessageProp.ERR_SAVE.getMsg();
+			logger.error(e.getMessage());
+			throw new Exception(MessageProp.ERR_SAVE.getMsg());
 		}
 
 		return MessageProp.INFO_SAVE.getMsg();
