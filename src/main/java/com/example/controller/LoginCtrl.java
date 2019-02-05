@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.common.security.JwtManager;
 import com.common.util.MessageReturn;
-import com.common.vo.LoginVo;
+import com.example.vo.LoginVo;
 
 @RestController
 @RequestMapping("/api/auth")
 public class LoginCtrl {
 
-	private static Map<String, Object> result = new HashMap<String, Object>();
-	private static String msg = null;
+	private Map<String, Object> result = new HashMap<>();
+	private String msg = null;
 
 	@Autowired
 	private JwtManager jwtManager;

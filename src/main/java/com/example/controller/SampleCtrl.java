@@ -28,8 +28,8 @@ import com.example.vo.JobListVo;
 @RequestMapping({"/api/emp"})
 public class SampleCtrl {
 
-	private static Map<String, Object> result = new HashMap<String, Object>();
-	private static String msg = null;
+	private Map<String, Object> result = new HashMap<>();
+	private String msg = null;
 	
 	@Autowired
 	private SampleService service;
