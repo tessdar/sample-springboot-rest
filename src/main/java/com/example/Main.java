@@ -16,19 +16,18 @@
 
 package com.example;
 
-import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.example", "com.common"})
 @EnableScheduling
 @EnableCaching
-@ComponentScan({"com.example","com.common"})
-public class Main {
+public class Main extends SpringBootServletInitializer {
 	
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(Main.class, args);
-	}
+//	public static void main(String[] args) throws Exception {
+//		SpringApplication.run(Main.class, args);
+//	}
 }

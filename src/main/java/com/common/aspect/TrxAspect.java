@@ -1,4 +1,4 @@
-package com.common.config;
+package com.common.aspect;
 
 import java.util.Collections;
 
